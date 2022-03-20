@@ -21,13 +21,11 @@ function quoteLoaded(){
   quoteContainer.hidden = false
 }
 
-// show New Quote
+
 function newQuote() {
-  // pick a random quote fro apiQuotes array
-  // math floor returns largest int less than or equal to a given number
   quoteLoading()
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
-  // Check if author field is null and replace with unknown
+  
  
   if(!quote.author){
     authorText.textContent = 'Unknown'
@@ -36,7 +34,7 @@ function newQuote() {
     authorText.textContent = quote.author
   }
 
-  // Check quote length to determine styling
+ 
   if (quote.text.length > 117){
     quoteText.classList.add('long-quote')
   }
